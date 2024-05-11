@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telestunes</title>
+</head>
+<body>
+    <h1>Welcome to Telestunes</h1>
+    <p>Check out our links:</p>
+    <ul>
+        <li><a href="URL1">Link 1</a></li>
+        <li><a href="URL2">Link 2</a></li>
+        <li><a href="URL3">Link 3</a></li>
+    </ul>
+</body>
+</html>
