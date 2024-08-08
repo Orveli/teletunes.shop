@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telestunes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>World's Most Compact Flutes by TeleTunes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-33XRKJ97TF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -14,128 +13,223 @@
         gtag('config', 'G-33XRKJ97TF');
     </script>
     <style>
+        :root {
+            --primary-color: #730204;
+            --secondary-color: #FFD700;
+            --bg-color: #FFF8E7;
+            --text-color: #333;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('bg.jpg');
-            background-size: cover;
-            background-position: top center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            color: #333;
-            text-align: center;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-
-        header {
+        .bg-image {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            background-color: #730204c7;
-            color: wheat;
-            padding: 3% 0;
+            height: 100%;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: -1;
+            filter: blur(5px);
         }
+        header {
+            background-color: rgba(139, 0, 0, 0.95);
+            color: var(--secondary-color);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1rem;
 
+        }
         h1 {
-            margin: 0;
-            font-size: 7vh;
-            cursor: pointer;
-            font-weight: bold;
+            margin-bottom: 0.5vh;
+            font-size: 5vw;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+            animation: none;
         }
-
+        h2 {
+            font-size: 3vw;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            font-weight: 300;
+            letter-spacing: 0.2em; 
+        }
+		h2 span {
+            display: inline-block;
+            animation: scale 4s ease-in-out infinite;
+            transform-origin: center;
+        }
+        @keyframes scale {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(2); } 
+        }
+        
         main {
-            flex: 1;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4vh 2vw;
+        }
+        .button-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .button-link {
-            display: block;
-            width: 75%;
-            max-width: 500px;
-            margin: 5% auto;
-            background-color: #730204c7;
-            color: white;
-            padding: 2%;
-            border-radius: 5px;
-            font-size: 5vh;
-            cursor: pointer;
-            font-weight: bold;
-            outline: 2px solid wheat;
-            text-decoration: none;
-        }
-
-        footer {
+            justify-content: space-between;
             width: 100%;
-            background-color: #730204c7;
-           
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        button {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            padding: 2vh 2vw;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 2vh;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        button:last-child {
+            margin-bottom: 0;
+        }
+        button:hover {
+            background-color: #A52A2A;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 2vh 0;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+        }
+        .social-links {
             display: flex;
             justify-content: center;
             align-items: center;
-
-            
-                padding-top: 10%;
-                padding-bottom: 10%;
-     
+            gap: 20px;
         }
-
-        footer a {
-            color: wheat;
-            margin: 0 15px;
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-block;
+            color: white;
         }
-
-        i {
-            font-size: 350%;
+        .social-links a:hover {
+            transform: translateY(-3px) rotate(5deg);
         }
-
+        .social-links i {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fa-facebook { background-color: #3b5998; }
+        .fa-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
+        .fa-tiktok { background-color: #000000; }
+        .fa-youtube { background-color: #FF0000; }
+        
         @media (max-width: 768px) {
-            h1 {
-                font-size: 6vh;
-                padding-top: 5%;
-                padding-bottom: 5%;
+            h1 { font-size: 7vw; }
+            h2 { font-size: 6vw; }
+            button { 
+                font-size: 5vw;
+                width: 100%;
             }
-
-            .button-link {
-                font-size: 4vh;
-                padding: 4%;
-            }
-
-            footer {
-                padding-top: 10%;
-                padding-bottom: 10%;
-            }
-
-            footer a {
-               // margin: 12px 0;
-            }
-
-            i {
-                font-size: 400%;
+            .social-links a {
+                width: 12vw;
+                height: 12vw;
+                font-size: 6vw;
             }
         }
+ 
+        .button-container button {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+        }
+        .social-links a {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+        }
+
+
+
     </style>
 </head>
-
 <body>
+    <div class="reveal-overlay"></div>
+    <div class="bg-image"></div>
     <header>
-        <h1>TELETUNES</h1>
+        
+        <h2><span id="animated-text">T</span>ele<span id="animated-text">T</span>unes</span></h2>
+        <h1>World's Most Compact Flutes</h1>
     </header>
     <main>
-        <a href="https://teletunes.etsy.com/?etsrc=sdt&section_id=32663413" class="button-link">FLUTE SHOP</a>
-        <a href="https://teletunes.etsy.com/?etsrc=sdt&section_id=48644835" class="button-link">BUY 3D FILES</a>
-        <a href="https://makerworld.com/en/@TeleTunes" class="button-link">FREE 3D FILES</a>
+        <div class="button-container">
+            <button onclick="window.location.href='https://teletunes.etsy.com/?etsrc=sdt&section_id=32663413'">BUY FLUTES</button>
+            <button onclick="window.location.href='https://makerworld.com/en/models/471686'">FREE FLUTE</button>
+            <button onclick="window.location.href='https://teletunes.etsy.com/?etsrc=sdt&section_id=48644835'">3D FILES</button>
+        </div>
     </main>
     <footer>
-        <a href="https://www.tiktok.com/@thingofamagick"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61556830947529"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/teletunesinstruments/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/channel/UCfrE0FmjwIgg2GY873Qp1cw"><i class="fab fa-youtube"></i></a>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61556830947529" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/teletunesinstruments/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@thingofamagick" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/channel/UCfrE0FmjwIgg2GY873Qp1cw" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
     </footer>
-</body>
 
+    <script>
+        document.querySelectorAll('.button-container button').forEach((button, index) => {
+            setTimeout(() => {
+                button.style.opacity = '1';
+                button.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+
+        document.querySelectorAll('.social-links a').forEach((link, index) => {
+            setTimeout(() => {
+                link.style.opacity = '1';
+                link.style.transform = 'scale(1)';
+            }, index * 50);
+        });
+
+     function wrapLetters(element) {
+            element.innerHTML = element.textContent.replace(/\S/g, "<span>$&</span>");
+            Array.from(element.children).forEach((span, index) => {
+                span.style.setProperty('--char-index', index);
+            });
+        }
+
+        wrapLetters(document.getElementById('animated-text'));
+    </script>
+</body>
 </html>
